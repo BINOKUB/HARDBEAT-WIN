@@ -1,4 +1,4 @@
-# 🧬 HARDBEAT LAB (Teacher Edition)
+# HARDBEAT LAB (Teacher Edition)
 > **La Workstation Techno Portable & Le Dojo Polyrythmique.**
 > *Zéro Latence. Zéro Installation. 100% Groove.*
 
