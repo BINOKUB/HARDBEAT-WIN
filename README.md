@@ -34,7 +34,7 @@ Cependant, si cet outil vous apporte de la valeur, vous pouvez soutenir le déve
 3. Lancez `HARDBEAT-PRO-V3.exe`.
 4. *Astuce : Créez un raccourci sur votre bureau pour un accès rapide.*
 
-## 🎹 Contrôles Clavier
+## Contrôles Clavier
 - **1-8** : Charger une scène.
 - **Espace** : Play / Stop.
 - **F11** : Plein Écran (Immersion Totale).
