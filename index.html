@@ -1,1 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HARDBEAT LAB | The Techno Dojo</title>
+    <meta name="description" content="Séquenceur Techno Polyrythmique et Outil d'Entraînement. Gratuit & Portable.">
+    
+    <style>
+        /* --- CONFIGURATION GLOBALE --- */
+        :root {
+            --bg-color: #050505;
+            --card-bg: #111111;
+            --neon-cyan: #00f3ff;
+            --neon-yellow: #ccff00;
+            --neon-pink: #ff0055;
+            --text-main: #e0e0e0;
+            --font-stack: 'Courier New', Courier, monospace;
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-stack);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Effet de grille en arrière-plan */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+        }
+
+        /* --- TYPOGRAPHIE --- */
+        h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; }
+        
+        .highlight-cyan { color: var(--neon-cyan); text-shadow: 0 0 10px rgba(0, 243, 255, 0.5); }
+        .highlight-yellow { color: var(--neon-yellow); }
+
+        /* --- HERO SECTION (Le haut de page) --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid #333;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            border: 2px solid var(--neon-cyan);
+            padding: 20px 40px;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.2), inset 0 0 20px rgba(0, 243, 255, 0.1);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            color: #888;
+        }
+
+        /* --- BOUTON PRINCIPAL (ITCH.IO) --- */
+        .btn-itch {
+            background: transparent;
+            color: var(--neon-yellow);
+            border: 2px solid var(--neon-yellow);
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-itch:hover {
+            background: var(--neon-yellow);
+            color: #000;
+            box-shadow: 0 0 30px var(--neon-yellow);
+        }
+
+        .btn-itch::after {
+            content: "↓ TÉLÉCHARGER V3.0";
+            display: block;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            opacity: 0.7;
+        }
+
+        /* --- FEATURES GRID --- */
+        .features {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid #333;
+            padding: 30px;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
+
+        /* --- POLYPRACTICE SECTION --- */
+        .poly-section {
+            background: #0a0a0a;
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .poly-title { color: var(--neon-cyan); font-size: 2.5rem; margin-bottom: 20px; }
+        
+        /* --- DONATION / FOOTER --- */
+        footer {
+            padding: 60px 20px;
+            text-align: center;
+            background: #000;
+        }
+
+        .donation-box {
+            border: 1px dashed var(--neon-pink);
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        .heart { color: var(--neon-pink); animation: beat 1s infinite; display: inline-block; }
+
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .links a {
+            color: #666;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+        }
+        .links a:hover { color: var(--neon-cyan); }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; padding: 15px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div style="font-size: 1rem; color: var(--neon-cyan); margin-bottom: 10px;">BINOKUB PRESENTS</div>
+        <h1>HARDBEAT <span class="highlight-yellow">LAB</span></h1>
+        <p>
+            La Workstation Techno Portable & Le Dojo Polyrythmique.<br>
+            Zéro Latence. Zéro Installation. 100% Groove.
+        </p>
+        
+        <a href="https://ton-profil.itch.io/hardbeat-lab" target="_blank" class="btn-itch">
+            LANCER LE TÉLÉCHARGEMENT
+        </a>
+        <p style="margin-top: 15px; font-size: 0.8rem; color: #555;">Windows 64-bit | Portable (.exe)</p>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <span class="feature-icon">🔊</span>
+            <h3 class="highlight-cyan">MOTEUR AUDIO V3</h3>
+            <p>Synthèse pure dédiée à la Techno. Kick profond (Rumble), Snare claquant et Hi-Hats dynamiques. Pas de samples, que des mathématiques.</p>
+        </div>
+
+        <div class="feature-card">
+            <span class="feature-icon">🧬</span>
+            <h3 class="highlight-yellow">POLYPRACTICE</h3>
+            <p>Un module d'entraînement visuel intégré. Développez votre indépendance rythmique avec 50 exercices progressifs.</p>
+        </div>
+
+        <div class="feature-card">
+            <span class="feature-icon">⚡</span>
+            <h3 class="highlight-cyan">PERFORMANCE</h3>
+            <p>Conçu pour le live. Gestion des scènes, mutes instantanés et interface "No-Nonsense" pour éviter la fatigue visuelle.</p>
+        </div>
+    </section>
+
+    <section class="poly-section">
+        <h2 class="poly-title">LE DOJO RYTHMIQUE</h2>
+        <p style="max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: #ccc;">
+            La Techno Hardgroove repose sur la polyrythmie. <br>
+            <strong>Hardbeat Lab</strong> n'est pas qu'un instrument, c'est votre professeur.
+            <br><br>
+            Comprend un cahier d'exercices flottant pour pratiquer tout en jouant.
+        </p>
+    </section>
+
+    <footer>
+        <div class="donation-box">
+            <h3 style="color: var(--neon-pink);">DONATEWARE</h3>
+            <p style="margin: 15px 0;">
+                Ce logiciel est gratuit. Si vous aimez mon travail, considérez un don pour soutenir la lutte contre les cancers du sang.
+            </p>
+            <a href="https://www.cancersdusang.ca/?form=donate&utm_source=match&utm_medium=email&utm_campaign=AugustMatch_2025&utm_content=email3_fr_banner" target="_blank" style="color: var(--neon-pink); font-weight: bold; text-decoration: underline;">
+                FAIRE UN DON <span class="heart">❤</span>
+            </a>
+        </div>
+
+        <div class="links">
+            <a href="https://hardbeat-pro.binokub.com/" target="_blank">LE HUB</a>
+            <a href="https://www.reddit.com/r/HARDBEAT_DEV/" target="_blank">REDDIT</a>
+            <a href="https://www.youtube.com/@binokub9" target="_blank">YOUTUBE</a>
+        </div>
+        
+        <div style="margin-top: 30px; font-size: 0.7rem; color: #444;">
+            © 2026 BINOKUB ENGINE. DESIGNED IN QUEBEC.
+        </div>
+    </footer>
+
+</body>
+</html>
