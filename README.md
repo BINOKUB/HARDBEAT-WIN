@@ -2,7 +2,7 @@
 > **La Workstation Techno Portable & Le Dojo Polyrythmique.**
 > *Zéro Latence. Zéro Installation. 100% Groove.*
 
-![Hardbeat Banner](https://hardbeat-lab.binokub.com/hardbeat-lab-pro.png)
+![Hardbeat Banner](https://hardbeat-lab.binokub.com/banner.png)
 
 ##  C'est quoi ?
 **HARDBEAT LAB** n'est pas juste un séquenceur. C'est un instrument de **performance live** et un outil d'**éducation rythmique** conçu pour les producteurs de Techno Hardgroove.
