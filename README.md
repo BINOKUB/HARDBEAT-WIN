@@ -11,7 +11,7 @@ Il combine la puissance d'un moteur audio natif (Windows 64-bit) avec une métho
 
 ##  Les Points Forts
 
-### 1. 🧬 Module POLYPRACTICE (Nouveau)
+### 1.  Module POLYPRACTICE (Nouveau)
 Développez votre indépendance rythmique avec le concept "Body over Mind".
 - **Visualiseur de Phase :** Voyez les cycles se décaler (ex: 4 pas contre 3).
 - **Cahier d'Exercices Intégré :** 50 leçons progressives (Débutant à Maître) en fenêtre flottante.
@@ -22,7 +22,7 @@ Développez votre indépendance rythmique avec le concept "Body over Mind".
 - **Total Recall :** Sauvegardez vos scènes (Sons, Mutes, FX) instantanément.
 - **Rumble Kick & Acid :** Moteur de synthèse dédié à la Techno.
 
-## 🎓La Philosophie "Prix Libre"
+## La Philosophie "Prix Libre"
 Ce logiciel est le fruit de centaines d'heures de passion. Il est **GRATUIT** pour permettre à tous d'apprendre la musique.
 
 Cependant, si cet outil vous apporte de la valeur, vous pouvez soutenir le développement ou faire un don à une cause qui nous est chère :
