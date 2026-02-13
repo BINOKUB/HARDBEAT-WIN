@@ -26,9 +26,10 @@
             font-family: var(--font-stack);
             line-height: 1.6;
             overflow-x: hidden;
+            position: relative; /* Nécessaire pour le positionnement des pseudos-éléments */
         }
 
-        /* Effet de grille en arrière-plan */
+        /* Effet de grille en arrière-plan (COUCHE -1) */
         body::before {
             content: "";
             position: fixed;
@@ -37,7 +38,24 @@
                 linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
             background-size: 40px 40px;
-            z-index: -1;
+            z-index: -1; /* Juste derrière le texte */
+        }
+
+        /* --- AJOUT : IMAGE DE BANNIÈRE TRANSLUCIDE (COUCHE -2) --- */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            /* Charge l'image banner.png */
+            background-image: url('banner.png'); 
+            /* L'image couvre tout l'écran sans déformation */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* Règle l'effet "translucide" (0.3 = 30% visible) */
+            opacity: 0.3; 
+            /* Place l'image TOUT au fond, derrière la grille */
+            z-index: -2; 
         }
 
         /* --- TYPOGRAPHIE --- */
@@ -56,6 +74,8 @@
             text-align: center;
             padding: 20px;
             border-bottom: 1px solid #333;
+            /* Ajout d'un léger fond pour améliorer la lisibilité sur l'image */
+            background-color: rgba(5, 5, 5, 0.5);
         }
 
         .hero h1 {
@@ -64,18 +84,20 @@
             border: 2px solid var(--neon-cyan);
             padding: 20px 40px;
             box-shadow: 0 0 20px rgba(0, 243, 255, 0.2), inset 0 0 20px rgba(0, 243, 255, 0.1);
+            background-color: rgba(0,0,0,0.7); /* Fond sombre pour le titre */
         }
 
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 40px;
             max-width: 600px;
-            color: #888;
+            color: #ddd; /* Texte légèrement plus clair */
+            text-shadow: 1px 1px 2px #000; /* Ombre portée pour la lisibilité */
         }
 
         /* --- BOUTON PRINCIPAL (ITCH.IO) --- */
         .btn-itch {
-            background: transparent;
+            background: rgba(0, 0, 0, 0.6); /* Fond sombre pour le bouton */
             color: var(--neon-yellow);
             border: 2px solid var(--neon-yellow);
             padding: 15px 40px;
@@ -111,6 +133,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
+            /* Fond semi-transparent pour la section */
+            background-color: rgba(5, 5, 5, 0.7);
         }
 
         .feature-card {
@@ -130,7 +154,7 @@
 
         /* --- POLYPRACTICE SECTION --- */
         .poly-section {
-            background: #0a0a0a;
+            background: rgba(10, 10, 10, 0.8); /* Fond semi-transparent */
             padding: 80px 20px;
             text-align: center;
             border-top: 1px solid #333;
@@ -143,7 +167,7 @@
         footer {
             padding: 60px 20px;
             text-align: center;
-            background: #000;
+            background: #000; /* Footer reste noir opaque */
         }
 
         .donation-box {
@@ -177,7 +201,7 @@
 <body>
 
     <section class="hero">
-        <div style="font-size: 1rem; color: var(--neon-cyan); margin-bottom: 10px;">BINOKUB PRESENTS</div>
+        <div style="font-size: 1rem; color: var(--neon-cyan); margin-bottom: 10px; text-shadow: 1px 1px 2px #000;">BINOKUB PRESENTS</div>
         <h1>HARDBEAT <span class="highlight-yellow">LAB</span></h1>
         <p>
             La Workstation Techno Portable & Le Dojo Polyrythmique.<br>
@@ -187,7 +211,7 @@
         <a href="https://ton-profil.itch.io/hardbeat-lab" target="_blank" class="btn-itch">
             LANCER LE TÉLÉCHARGEMENT
         </a>
-        <p style="margin-top: 15px; font-size: 0.8rem; color: #555;">Windows 64-bit | Portable (.exe)</p>
+        <p style="margin-top: 15px; font-size: 0.8rem; color: #aaa; text-shadow: 1px 1px 2px #000;">Windows 64-bit | Portable (.exe)</p>
     </section>
 
     <section class="features">
@@ -212,7 +236,7 @@
 
     <section class="poly-section">
         <h2 class="poly-title">LE DOJO RYTHMIQUE</h2>
-        <p style="max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: #ccc;">
+        <p style="max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: #ddd; text-shadow: 1px 1px 2px #000;">
             La Techno Hardgroove repose sur la polyrythmie. <br>
             <strong>Hardbeat Lab</strong> n'est pas qu'un instrument, c'est votre professeur.
             <br><br>
@@ -238,7 +262,7 @@
         </div>
         
         <div style="margin-top: 30px; font-size: 0.7rem; color: #444;">
-            © 2026 BINOKUB ENGINE. DESIGNED IN QUEBEC.
+            © 2026 BINOKUB ENGINE.
         </div>
     </footer>
 
