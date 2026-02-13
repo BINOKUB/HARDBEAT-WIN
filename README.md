@@ -40,4 +40,4 @@ Cependant, si cet outil vous apporte de la valeur, vous pouvez soutenir le déve
 - **F11** : Plein Écran (Immersion Totale).
 
 ---
-*Propulsé par Binokub Engine © 2026 - Conçu au Québec.*
+*Propulsé par Binokub Engine © 2026*
